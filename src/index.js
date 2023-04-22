@@ -1,0 +1,12 @@
+const express = require('express')
+const app = express()
+require("dotenv").config()
+require("./db")
+const Usuarioroute = require("./routes/usuarioRoute")
+const Perfilroute = require("./routes/perfilRoute")
+app.use(express.json())
+app.use("/usuario", Usuarioroute)
+app.use("/perfil",Perfilroute)
+app.listen(3000,()=>{
+console.log("Rodando na porta 3000")
+})
